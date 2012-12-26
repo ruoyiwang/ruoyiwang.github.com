@@ -3,18 +3,51 @@
 <head>
 	<title>Ruoyi Wang</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		$("document").ready(function(){
+			$(".right_content").hide();
+			$("#right_content_home").slideDown("fast");
+			
+			$("div#left_menu_home").click(function(){
+				$(".right_content").slideUp("fast");
+				$("#right_content_home").slideDown("fast");
+			});$("div#left_menu_projects").click(function(){
+				$(".right_content").slideUp("fast");
+				$("#right_content_Projects").slideDown("fast");
+			});
+		});
+	</script>
 </head>
 <body>
 	<div id="left_menu">
-		<div class="left_menu_items">
-			<a href="http://ruoyiwang.com/">HOME</a>
+		<div class="left_menu_items" id="left_menu_home">
+			HOME
+		</div>
+		<div class="left_menu_items" id="left_menu_projects">
+			Projects
 		</div>
 		<div class="left_menu_items">
 			<a href="http://wang-ry.tumblr.com/">Tumblr</a>
 		</div>
 	</div>
-	<div class="right_content">
-		Hello World!<br />
-		  - Roy
+	<div class="right_content" id="right_content_home">
+		<p>
+		Hello Interwebs!
+		</p>
+		<p>
+		  &nbsp&nbsp This is Roy's little site in developement!
+		</p>
+		<p>
+		  &nbsp&nbsp Come back later to find more information
+		</p>
+		<p>
+		- Roy
+		</p>
+	</div>
+	<div class="right_content" id="right_content_Projects">
+		<br />
+		msgfuse.com <br /> <br />
+		Chi
 	</div>
 </body>

@@ -14,6 +14,7 @@ html {
 	-o-background-size: cover;
 	background-size: cover;
 	*/
+	
 	background-color: hsl(0, 0%, 10%)	/* a very dark grey */
 }
 div#left_menu{
@@ -27,6 +28,8 @@ div.right_content{
 
 div.left_menu_items{
 	font-size: 30p;
+	cursor:pointer;
+	margin-bottom: 10px;
 }
 a{
 	color: white;
