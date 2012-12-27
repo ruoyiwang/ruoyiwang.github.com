@@ -7,12 +7,17 @@
 	<script type="text/javascript">
 		$("document").ready(function(){
 			$(".right_content").hide();
+			$("div#left_menu_home").addClass("left_menu_highlighted");
 			$("#right_content_home").slideDown("fast");
 			
 			$("div#left_menu_home").click(function(){
+				$(".left_menu_items").removeClass("left_menu_highlighted");
+				$("div#left_menu_home").addClass("left_menu_highlighted");
 				$(".right_content").slideUp("fast");
 				$("#right_content_home").slideDown("fast");
 			});$("div#left_menu_projects").click(function(){
+				$(".left_menu_items").removeClass("left_menu_highlighted");
+				$("div#left_menu_projects").addClass("left_menu_highlighted");
 				$(".right_content").slideUp("fast");
 				$("#right_content_Projects").slideDown("fast");
 			});
@@ -46,8 +51,18 @@
 		</p>
 	</div>
 	<div class="right_content" id="right_content_Projects">
-		<br />
-		msgfuse.com <br /> <br />
-		Chi
+		<div class="project_box">
+		<div class="project_title">
+			msgfuse.com
+		</div>
+		Msgfuse generates a link holding a message whose content are revealed only if the author's criterias are met.
+		</div>
+		<div class="project_box">
+		<div class="project_title">
+			Chi
+		</div>
+		Chi(temporary name) generates a random restaurant based on user's restrictions.<br />
+		This is to help the indecisive ones with their daily restaurant needs
+		</div>
 	</div>
 </body>

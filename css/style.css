@@ -1,9 +1,8 @@
 body{
-	margin: 250px 100px;
+	margin: 10% 5%;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-size: 24px;
 	color: white;
-	font-weight: 100;
 }
 html {
 	/* this is the old bg img */
@@ -19,16 +18,27 @@ html {
 }
 div#left_menu{
 	float: left;
-	width: 20%;
+	padding-top: 30px;
+	width: 15%;
 }
 div.right_content{
 	float: right;
-	width: 78%;
+	width: 75%;
 }
-
+div.left_menu_highlighted{
+	border-right-width:2px;
+	border-right-style:solid;
+}
 div.left_menu_items{
-	font-size: 30p;
+	font-size: 25px;
 	cursor:pointer;
+	margin-bottom: 10px;
+}
+div.project_box{
+	margin-bottom: 50px;
+}
+div.project_title{
+	font-size: 30px;
 	margin-bottom: 10px;
 }
 a{
