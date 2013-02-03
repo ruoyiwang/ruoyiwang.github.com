@@ -70,7 +70,10 @@
                             '" title="', escape(theFile.name), '"/>'].join('');
 
           document.getElementById('list').insertBefore(span, null);	
-		  FB.api('/me/photos', 'post', {
+		  var request = new XMLHttpRequest();
+		  request.open('POST','https://graph.facebook.com/me/photos', true);
+		  request.setRequestHeader('Content-Type', 'multipart/form-data');
+		  FB.api('/me/photos', request, {
 				message:'photo description',
 				image:e.target.result
 			}, function(response){
