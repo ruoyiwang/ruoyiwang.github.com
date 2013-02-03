@@ -15,7 +15,7 @@
 			});
 			FB.getLoginStatus(function(response) {
 				if (response.status === 'connected') {
-					//window.location.reload();
+					window.location.reload();
 				}
 			});
 		};
@@ -27,12 +27,12 @@
 			document.getElementById('fb-root').appendChild(js);
 		}());
 		<!-- finish init -->
-		var imgURL="http://mindjunks.com/wp-content/uploads/2012/12/Golden-Retriever-Puppies.jpg";//change with your external photo url
+		var ="http://mindjunks.com/wp-content/uploads/2012/12/Golden-Retriever-Puppies.jpg";//change with your external photo url
 		var abs_path="C:\\Users\\Owner\\Pictures\\Cover Photos\\177877_10151041835530862_3309947_o.jpg";
 		function fbUpload() {
 			FB.api('/501208711/photos', 'post', {
 				message:'photo description',
-				image:abs_path        
+				url:imgURL        
 			}, function(response){
 
 				if (!response || response.error) {
