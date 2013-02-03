@@ -266,7 +266,7 @@ var CSPhotoSelector = (function(module, $) {
 			}
 			// hide the photo container
 			$photosWrapper.removeClass('CSPhoto_container_active');
-		//	$buttonOK.hide();
+			$buttonOK.show();
 			$albumsContainer.empty();
 			$photosContainer.empty();
 			selectedAlbumIds = [];
