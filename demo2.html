@@ -158,7 +158,6 @@
 					$("#login-status").html("Not logged in");
 				}
 			}, {scope:'user_photos,friends_photos'});
-			alert("PERMISSION SET OKAY");
 		});
 		
 		$("#btnLogout").click(function (e) {
@@ -170,9 +169,9 @@
 		$(".photoSelect").click(function (e) {
 			e.preventDefault();
 			id = null;
-//				if ( $(this).attr('data-id') ) id = $(this).attr('data-id');
-			//fbphotoSelect(id);
-			fbphotoSelect('me');
+			if ( $(this).attr('data-id') ) id = $(this).attr('data-id');
+				fbphotoSelect(id);
+			
 		});
 
 		logActivity = function (message) {
