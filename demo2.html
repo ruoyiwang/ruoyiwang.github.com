@@ -1,6 +1,81 @@
 <html>
 	<head>
-	<script src="//connect.facebook.net/en_US/all.js"></script>
+		<link rel="stylesheet" type="text/css" href="csphotoselector.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.js"></script>
+		<script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
+		<script type="text/javascript" src="fb.js"></script>
+		<script type="text/javascript" src="csphotoselector.js"></script>
+		<div id="fb-root"></div>
+		<script>
+		var accessToken;
+
+		window.fbAsyncInit = function() {
+			FB.init({appId : '126895384148490', status : true, cookie : true, oauth : true, xfbml : true});
+			FB.Event.subscribe('auth.login', function() {
+			  window.location.reload();
+			});
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					window.location.reload();
+				}
+			});
+		};
+
+		(function() {
+			var js = document.createElement('script');
+			js.type = 'text/javascript';
+			js.src = "//connect.facebook.net/en_US/all.js";
+			js.async = true;
+			document.getElementById('fb-root').appendChild(js);
+		}());
+		</script>
+		<script>
+		var did = function displayid(id){
+			document.getElementById("ta").value = id;
+		}
+
+		function get_id(callback){
+			callback("lol");
+		}
+
+		function getroysid()
+		{
+			get_self_id(did)
+		}
+		$("document").ready(function(){
+			$(".photoSelect").click(function (e) {
+				alert("WHEEE");
+				
+				e.preventDefault();
+				id = null;
+				if ( $(this).attr('data-id') ) id = $(this).attr('data-id');
+				fbphotoSelect(id);
+				
+			});
+		});
+		// Initialise the Photo Selector with options that will apply to all instances
+				CSPhotoSelector.init({debug: true});
+
+				// Create Photo Selector instances
+				selector = CSPhotoSelector.newInstance({
+					callbackAlbumSelected	: callbackAlbumSelected,
+					callbackAlbumUnselected	: callbackAlbumUnselected,
+					callbackPhotoSelected	: callbackPhotoSelected,
+					callbackPhotoUnselected	: callbackPhotoUnselected,
+					callbackSubmit			: callbackSubmit,
+					maxSelection			: 1,
+					albumsPerPage			: 6,
+					photosPerPage			: 200,
+					autoDeselection			: true
+				});
+
+				// reset and show album selector
+				selector.reset();
+				selector.showAlbumSelector(id);
+
+
+
+		</script>
 	</head>
 	
 	<body>
@@ -39,9 +114,54 @@
 		}
 	</script>
 	
-	<p>lalala</p>
+	<p>I AM A FLAMING COOKIE ON FIRE</p>
 	
 	<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+	
+	<div id="CSPhotoSelector">
+		<div class="CSPhotoSelector_dialog">
+			<a href="#" id="CSPhotoSelector_buttonClose">x</a>
+			<div class="CSPhotoSelector_form">
+				<div class="CSPhotoSelector_header">
+					<p>Choose from Photos</p>
+				</div>
+
+				<div class="CSPhotoSelector_content CSAlbumSelector_wrapper">
+					<p>Browse your albums until you find a picture you want to use</p>
+					<div class="CSPhotoSelector_searchContainer CSPhotoSelector_clearfix">
+						<div class="CSPhotoSelector_selectedCountContainer">Select an album</div>
+					</div>
+					<div class="CSPhotoSelector_photosContainer CSAlbum_container"></div>
+				</div>
+
+				<div class="CSPhotoSelector_content CSPhotoSelector_wrapper">
+					<p>Select a new photo</p>
+					<div class="CSPhotoSelector_searchContainer CSPhotoSelector_clearfix">
+						<div class="CSPhotoSelector_selectedCountContainer"><span class="CSPhotoSelector_selectedPhotoCount">0</span> / <span class="CSPhotoSelector_selectedPhotoCountMax">0</span> photos selected</div>
+						<a href="#" id="CSPhotoSelector_backToAlbums">Back to albums</a>
+					</div>
+					<div class="CSPhotoSelector_photosContainer CSPhoto_container"></div>
+				</div>
+
+				<div id="CSPhotoSelector_loader"></div>
+
+
+				<div class="CSPhotoSelector_footer CSPhotoSelector_clearfix">
+					<a href="#" id="CSPhotoSelector_pagePrev" class="CSPhotoSelector_disabled">Previous</a>
+					<a href="#" id="CSPhotoSelector_pageNext">Next</a>
+					<div class="CSPhotoSelector_pageNumberContainer">
+						Page <span id="CSPhotoSelector_pageNumber">1</span> / <span id="CSPhotoSelector_pageNumberTotal">1</span>
+					</div>
+					<a href="#" id="CSPhotoSelector_buttonOK">OK</a>
+					<a href="#" id="CSPhotoSelector_buttonCancel">Cancel</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div>
+		<button class="photoSelect">asdfasdrgsdfgsd</button>
+	</div>
 	
 	<button onclick="fbUpload()">Upload</button>
 		<!--<form id="frm_uploadBox" action="" method="POST"> -->
