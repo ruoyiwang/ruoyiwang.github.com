@@ -53,26 +53,30 @@
 				
 			});
 		});
-		// Initialise the Photo Selector with options that will apply to all instances
-				CSPhotoSelector.init({debug: true});
+		
+		function unleashSelector(){
+			// Initialise the Photo Selector with options that will apply to all instances
+			CSPhotoSelector.init({debug: true});
 
-				// Create Photo Selector instances
-				selector = CSPhotoSelector.newInstance({
-					callbackAlbumSelected	: callbackAlbumSelected,
-					callbackAlbumUnselected	: callbackAlbumUnselected,
-					callbackPhotoSelected	: callbackPhotoSelected,
-					callbackPhotoUnselected	: callbackPhotoUnselected,
-					callbackSubmit			: callbackSubmit,
-					maxSelection			: 1,
-					albumsPerPage			: 6,
-					photosPerPage			: 200,
-					autoDeselection			: true
-				});
+			// Create Photo Selector instances
+			selector = CSPhotoSelector.newInstance({
+				callbackAlbumSelected	: callbackAlbumSelected,
+				callbackAlbumUnselected	: callbackAlbumUnselected,
+				callbackPhotoSelected	: callbackPhotoSelected,
+				callbackPhotoUnselected	: callbackPhotoUnselected,
+				callbackSubmit			: callbackSubmit,
+				maxSelection			: 1,
+				albumsPerPage			: 6,
+				photosPerPage			: 200,
+				autoDeselection			: true
+			});
 
-				// reset and show album selector
-				selector.reset();
-				selector.showAlbumSelector(id);
+			// reset and show album selector
+			selector.reset();
+			selector.showAlbumSelector(id);
 
+		}
+		
 
 
 		</script>
@@ -160,10 +164,9 @@
 	</div>
 	
 	<div>
-		<button class="photoSelect">asdfasdrgsdfgsd</button>
+		<button class="photoSelect" onclick="unleashSelector()">asdfasdrgsdfgsd</button>
 	</div>
 	
-	<button onclick="fbUpload()">Upload</button>
 		<!--<form id="frm_uploadBox" action="" method="POST"> -->
 <!--		<form id="frm_uploadBox" action="" enctype="multipart/form-data" method="POST">
 			 <!-- <input type="file" name="KittyNPup_trim.gif" /> 
