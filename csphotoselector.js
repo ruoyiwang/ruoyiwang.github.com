@@ -453,7 +453,7 @@ var CSPhotoSelector = (function(module, $) {
 						$photo.addClass(settings.albumSelectedClass);
 						$selectedCount.html(selectedPhotoIds.length);
 						log('CSPhotoSelector - newInstance - selectPhoto - selected IDs: ', selectedPhotoIds);
-						if (typeof instanceSettings.callbackPhotoSelected === "function") { instanceSettings.callbackPhotoSelected(photoId); }
+						if (typeof instanceSettings.callbackPhotoSelected === "function") { instanceSettings.callbackPhotoSelected(photoId); hideAlbumSelector();}
 					} else {
 						log('CSPhotoSelector - newInstance - selectPhoto - ID already stored');
 					}
