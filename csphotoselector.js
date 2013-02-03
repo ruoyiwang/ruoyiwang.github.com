@@ -266,7 +266,7 @@ var CSPhotoSelector = (function(module, $) {
 			}
 			// hide the photo container
 			$photosWrapper.removeClass('CSPhoto_container_active');
-		//	$buttonOK.hide();
+			$buttonOK.hide();
 			$albumsContainer.empty();
 			$photosContainer.empty();
 			selectedAlbumIds = [];
@@ -301,7 +301,7 @@ var CSPhotoSelector = (function(module, $) {
 			$backToAlbums.bind('click', function(e) {
 				e.preventDefault();
 				$pagination.show();
-				//$buttonOK.hide();
+				$buttonOK.hide();
 				hidePhotoSelector();
 			});
 
@@ -426,8 +426,7 @@ var CSPhotoSelector = (function(module, $) {
 			}
 
 			if (selectedAlbumIds.length === instanceSettings.maxSelection) {
-				if (typeof instanceSettings.callbackMaxSelection === "function") { instanceSettings.callbackMaxSelection(); 
-				
+				if (typeof instanceSettings.callbackMaxSelection === "function") { instanceSettings.callbackMaxSelection(); }
 			}
 		};
 		
@@ -474,8 +473,7 @@ var CSPhotoSelector = (function(module, $) {
 			}
 
 			if (selectedPhotoIds.length === instanceSettings.maxSelection) {
-				 buttonOK.show();
-				if (typeof instanceSettings.callbackMaxSelection === "function") { instanceSettings.callbackMaxSelection();}}
+				if (typeof instanceSettings.callbackMaxSelection === "function") { instanceSettings.callbackMaxSelection(); }
 			}
 			
 			// log(selectedPhotoIds);
