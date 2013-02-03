@@ -474,7 +474,8 @@ var CSPhotoSelector = (function(module, $) {
 			}
 
 			if (selectedPhotoIds.length === instanceSettings.maxSelection) {
-				if (typeof instanceSettings.callbackMaxSelection === "function") { instanceSettings.callbackMaxSelection(); buttonOK.show();}}
+				 buttonOK.show();
+				if (typeof instanceSettings.callbackMaxSelection === "function") { instanceSettings.callbackMaxSelection();}}
 			}
 			
 			// log(selectedPhotoIds);
