@@ -136,7 +136,8 @@
 				e.preventDefault();
 				id = null;
 //				if ( $(this).attr('data-id') ) id = $(this).attr('data-id');
-				fbphotoSelect(id);
+				//fbphotoSelect(id);
+				fbphotoSelect('me');
 			});
 
 			logActivity = function (message) {
@@ -166,21 +167,6 @@
 			document.getElementById('fb-root').appendChild(js);
 		}());
 		<!-- finish init -->
-		var imgURL="http://mindjunks.com/wp-content/uploads/2012/12/Golden-Retriever-Puppies.jpg";//change with your external photo url
-		var abs_path="@C:\\Users\\Owner\\Pictures\\Cover Photos\\177877_10151041835530862_3309947_o.jpg";
-		function fbUpload() {
-			FB.api('/me/photos', 'post', {
-				message:'photo description',
-				image:abs_path        
-			}, function(response){
-
-				if (!response || response.error) {
-					alert(response.error.message);
-				} else {
-					alert('Post ID: ' + response.id);
-				}
-			});
-		}
 	</script>
 	
 	<p>I AM A FLAMING COOKIE ON FIRE</p>
