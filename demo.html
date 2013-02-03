@@ -74,10 +74,13 @@
             ['Read bytes: ', start + 1, ' - ', stop + 1,
              ' of ', file.size, ' byte file'].join('');
 		
+    var blob = file.slice(start, stop + 1);
+    reader.readAsBinaryString(blob);
+	
 		//upload to fb
 		  	FB.api('/me/photos', 'post', {
 				message:'photo description',
-				image:evt.target.result       
+				image:blob    
 			}, function(response){
 
 				if (!response || response.error) {
@@ -91,8 +94,6 @@
 	
 	
 
-    var blob = file.slice(start, stop + 1);
-    reader.readAsBinaryString(blob);
   }
   
   document.querySelector('.readBytesButtons').addEventListener('click', function(evt) {
