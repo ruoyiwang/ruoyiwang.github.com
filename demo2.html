@@ -181,6 +181,10 @@
 		logActivity = function (message) {
 			$("#results").append('<div>' + message + '</div>');
 		};
+		
+		function picGo() {
+			fbphotoSelect('me');
+		}
 	</script>
 	
 	<p>I AM A FLAMING COOKIE ON FIRE</p>
@@ -229,7 +233,7 @@
 	</div>
 	
 	<div>
-		<button class="photoSelect" >asdfasdrgsdfgsd</button>
+		<button class="photoSelect" onclick="picGo()">asdfasdrgsdfgsd</button>
 	</div>
 	
 		<!--<form id="frm_uploadBox" action="" method="POST"> -->
