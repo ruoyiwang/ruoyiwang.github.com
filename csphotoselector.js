@@ -301,7 +301,7 @@ var CSPhotoSelector = (function(module, $) {
 			$backToAlbums.bind('click', function(e) {
 				e.preventDefault();
 				$pagination.show();
-		zz		$buttonOK.hide();
+				$buttonOK.hide();
 				hidePhotoSelector();
 			});
 
