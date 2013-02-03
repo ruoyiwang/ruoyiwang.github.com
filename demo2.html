@@ -61,7 +61,6 @@
 			  window.location.reload();
 			});
 			FB.login(function (response) {
-				alert("PERM");
 				if (response.authResponse) {
 					$("#login-status").html("Logged in");
 				} else {
@@ -89,7 +88,6 @@
 		 * ----------------------------------------------------------------- */
 		
 		fbphotoSelect = function(id) {
-			alert("ARRIVE");
 			// if no user/friend id is sent, default to current user
 			if (!id) id = 'me';
 			
@@ -144,7 +142,6 @@
 			// reset and show album selector
 			selector.reset();
 			selector.showAlbumSelector(id);
-			alert("PHOTOS");
 		}
 		
 		
@@ -236,16 +233,6 @@
 		<button class="photoSelect" onclick="picGo()">asdfasdrgsdfgsd</button>
 	</div>
 	
-		<!--<form id="frm_uploadBox" action="" method="POST"> -->
-<!--		<form id="frm_uploadBox" action="" enctype="multipart/form-data" method="POST">
-			 <!-- <input type="file" name="KittyNPup_trim.gif" /> 
-	 		 <input id="in_fileUpload" type="file"></input>
-			 <input type="hidden" name="source" value="@KittyNPup_trim.gif"/>
-			 <input type="hidden" name="message" value="Testing picture upload!"/>
-			 <input type="hidden" name="access_token" value="..."/> 
-		<!--</form> 
-		<input type="submit" id="upload" value="Upload"></input>
-		</form> -->
 	</body>
 
 </html>
