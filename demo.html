@@ -60,20 +60,16 @@
 
       // Closure to capture the file information.
       reader.onload = (function(theFile) {
-	  var datauri;
         return function(e) {
           // Render thumbnail.
           var span = document.createElement('span');
           span.innerHTML = ['<img class="thumb" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
-		datauri = e.target.result;
-          document.getElementById('list').insertBefore(span, null);
-        };
-      })(f);
-	  
-	  		FB.api('/me/photos', 'post', {
+
+          document.getElementById('list').insertBefore(span, null);	
+		  FB.api('/me/photos', 'post', {
 				message:'photo description',
-				url:datauri
+				url:e.target.result
 			}, function(response){
 				if (!response || response.error) {
 					alert(response.error.message);
@@ -81,6 +77,10 @@
 					alert('Post ID: ' + response.id);
 				}
 			});
+        };
+      })(f);
+	  
+
 
       // Read in the image file as a data URL.
       reader.readAsDataURL(f);
