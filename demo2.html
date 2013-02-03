@@ -44,11 +44,22 @@
 		}
 		
 		$(document).ready(function () {
+		
+		
+		
 			var selector, logActivity, callbackAlbumSelected, callbackPhotoUnselected, callbackSubmit;
 			var buttonOK = $('#CSPhotoSelector_buttonOK');
 			var o = this;
 			
-			
+			FB.login(function (response) {
+					alert("PERM");
+					if (response.authResponse) {
+						$("#login-status").html("Logged in");
+					} else {
+						$("#login-status").html("Not logged in");
+					}
+				}, {scope:'user_photos,friends_photos'});
+		
 			/* --------------------------------------------------------------------
 			 * Photo selector functions
 			 * ----------------------------------------------------------------- */
