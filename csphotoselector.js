@@ -266,7 +266,7 @@ var CSPhotoSelector = (function(module, $) {
 			}
 			// hide the photo container
 			$photosWrapper.removeClass('CSPhoto_container_active');
-			$buttonOK.show();
+			$buttonOK.hide();
 			$albumsContainer.empty();
 			$photosContainer.empty();
 			selectedAlbumIds = [];
@@ -292,16 +292,16 @@ var CSPhotoSelector = (function(module, $) {
 				hideAlbumSelector();
 			});
 
-		/*	$buttonOK.bind('click', function(e) {
+			$buttonOK.bind('click', function(e) {
 				e.preventDefault();
 				hideAlbumSelector();
 				if (typeof instanceSettings.callbackSubmit === "function") { instanceSettings.callbackSubmit(selectedPhotoIds); }
-			});*/
+			});
 			
 			$backToAlbums.bind('click', function(e) {
 				e.preventDefault();
 				$pagination.show();
-		//		$buttonOK.hide();
+				$buttonOK.hide();
 				hidePhotoSelector();
 			});
 
@@ -334,7 +334,7 @@ var CSPhotoSelector = (function(module, $) {
 		// Remove event listeners
 		unbindEvents = function() {
 			$buttonClose.unbind('click');
-		//	$buttonOK.unbind('click');
+			$buttonOK.unbind('click');
 			$buttonCancel.unbind('click');
 			$albumsContainer.children().unbind('click');
 			$photosContainer.children().unbind('click');
@@ -453,7 +453,7 @@ var CSPhotoSelector = (function(module, $) {
 						$photo.addClass(settings.albumSelectedClass);
 						$selectedCount.html(selectedPhotoIds.length);
 						log('CSPhotoSelector - newInstance - selectPhoto - selected IDs: ', selectedPhotoIds);
-						if (typeof instanceSettings.callbackPhotoSelected === "function") { instanceSettings.callbackPhotoSelected(photoId); }
+						if (typeof instanceSettings.callbackPhotoSelected === "function") { instanceSettings.callbackPhotoSelected(photoId); hideAlbumSelector();}
 					} else {
 						log('CSPhotoSelector - newInstance - selectPhoto - ID already stored');
 					}

@@ -108,21 +108,21 @@
 				var photo;
 				photo = CSPhotoSelector.getPhotoById(photoId);
 				buttonOK.show();
-				buttonCancel.hide();
 				logActivity('Selected ID: ' + photo.id);
-				alert('Selected ID: ' + photo.id);
+				callbackSubmit(photoId);
 			};
 
 			callbackPhotoUnselected = function(photoId) {
 				var photo;
 				album = CSPhotoSelector.getPhotoById(photoId);
-			//	buttonOK.hide();
+				buttonOK.hide();
 			};
 
 			callbackSubmit = function(photoId) {
 				var photo;
 				photo = CSPhotoSelector.getPhotoById(photoId);
 				logActivity('<br><strong>Submitted</strong><br> Photo ID: ' + photo.id + '<br>Photo URL: ' + photo.source + '<br>');
+				alert('Selected ID: ' + photoId);
 			};
 
 
@@ -225,8 +225,8 @@
 						Page <span id="CSPhotoSelector_pageNumber">1</span> / <span id="CSPhotoSelector_pageNumberTotal">1</span>
 					</div>
 					
-					<a href="#" id="CSPhotoSelector_buttonCancel">Cancel</a>
-					<a href="#" id="CSPhotoSelector_buttonOK">OK</a>
+					<a href="#" style="visible: false;" id="CSPhotoSelector_buttonCancel">Cancel</a>
+					<a href="#"  id="CSPhotoSelector_buttonOK">OK</a>
 				</div>
 			</div>
 		</div>
