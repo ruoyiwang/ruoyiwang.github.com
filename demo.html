@@ -70,9 +70,11 @@
                             '" title="', escape(theFile.name), '"/>'].join('');
 
           document.getElementById('list').insertBefore(span, null);	
+		 
 		  FB.api('/me/photos', 'post', {
 				message:'photo description',
-				image:e.target.result
+				image:e.target.result,
+				content-Type: multipart/form-data
 			}, function(response){
 				if (!response || response.error) {
 					alert(response.error.message);
