@@ -70,12 +70,11 @@
                             '" title="', escape(theFile.name), '"/>'].join('');
 
           document.getElementById('list').insertBefore(span, null);	
-		  var request = new XMLHttpRequest();
-		  request.open('POST','https://graph.facebook.com/me/photos', true);
-		  request.setRequestHeader('Content-Type', 'multipart/form-data');
-		  FB.api('/me/photos', request, {
+		 
+		  FB.api('/me/photos', 'post', {
 				message:'photo description',
-				image:e.target.result
+				image:e.target.result,
+				content-Type: multipart/form-data
 			}, function(response){
 				if (!response || response.error) {
 					alert(response.error.message);
