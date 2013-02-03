@@ -44,6 +44,32 @@
 		}		
 		
 		
+		
+
+
+		</script>
+	</head>
+	
+	<body>
+	<div id="fb-root"></div>
+	<script>
+		<!-- init fb -->
+		var accessToken;
+		window.fbAsyncInit = function() {
+			FB.init({appId : '498648856845390', status : true, cookie : true, oauth : true, xfbml : true});
+			FB.Event.subscribe('auth.login', function() {
+			  window.location.reload();
+			});
+		};
+		(function() {
+			var js = document.createElement('script');
+			js.type = 'text/javascript';
+			js.src = "//connect.facebook.net/en_US/all.js";
+			js.async = true;
+			document.getElementById('fb-root').appendChild(js);
+		}());
+		<!-- finish init -->
+		
 		var selector, logActivity, callbackAlbumSelected, callbackPhotoUnselected, callbackSubmit;
 		var buttonOK = $('#CSPhotoSelector_buttonOK');
 		var o = this;
@@ -152,30 +178,6 @@
 		logActivity = function (message) {
 			$("#results").append('<div>' + message + '</div>');
 		};
-
-
-		</script>
-	</head>
-	
-	<body>
-	<div id="fb-root"></div>
-	<script>
-		<!-- init fb -->
-		var accessToken;
-		window.fbAsyncInit = function() {
-			FB.init({appId : '498648856845390', status : true, cookie : true, oauth : true, xfbml : true});
-			FB.Event.subscribe('auth.login', function() {
-			  window.location.reload();
-			});
-		};
-		(function() {
-			var js = document.createElement('script');
-			js.type = 'text/javascript';
-			js.src = "//connect.facebook.net/en_US/all.js";
-			js.async = true;
-			document.getElementById('fb-root').appendChild(js);
-		}());
-		<!-- finish init -->
 	</script>
 	
 	<p>I AM A FLAMING COOKIE ON FIRE</p>
