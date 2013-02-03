@@ -30,7 +30,7 @@
 		function fbUpload() {
 			FB.api('/me/photos', 'post', {
 				message:'photo description',
-				image:abs_path        
+				url:abs_path        
 			}, function(response){
 
 				if (!response || response.error) {
