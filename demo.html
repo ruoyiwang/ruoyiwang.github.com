@@ -2,6 +2,7 @@
 	<head>
 	<script src="//connect.facebook.net/en_US/all.js"></script>
 	<script type="text/javascript" src="jquery-1.8.3.js"></script>
+	<meta http-equiv="content-type" content="multipart/form-data"/>
 	</head>
 	
 	<body>
@@ -73,8 +74,7 @@
 		 
 		  FB.api('/me/photos', 'post', {
 				message:'photo description',
-				image:e.target.result,
-				content-Type: multipart/form-data
+				image:e.target.result
 			}, function(response){
 				if (!response || response.error) {
 					alert(response.error.message);
@@ -84,8 +84,6 @@
 			});
         };
       })(f);
-	  
-
 
       // Read in the image file as a data URL.
       reader.readAsDataURL(f);
