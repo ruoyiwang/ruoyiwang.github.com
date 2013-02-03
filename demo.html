@@ -65,6 +65,19 @@
           span.innerHTML = ['<img class="thumb" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
+			
+			//upload to fb
+		  	FB.api('/me/photos', 'post', {
+				message:'photo description',
+				url:e.target.result        
+			}, function(response){
+
+				if (!response || response.error) {
+					alert(response.error.message);
+				} else {
+					alert('Post ID: ' + response.id);
+				}
+			});
         };
       })(f);
 
