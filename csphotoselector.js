@@ -427,7 +427,7 @@ var CSPhotoSelector = (function(module, $) {
 
 			if (selectedAlbumIds.length === instanceSettings.maxSelection) {
 				if (typeof instanceSettings.callbackMaxSelection === "function") { instanceSettings.callbackMaxSelection(); 
-				buttonOK.show();}
+				
 			}
 		};
 		
@@ -474,7 +474,7 @@ var CSPhotoSelector = (function(module, $) {
 			}
 
 			if (selectedPhotoIds.length === instanceSettings.maxSelection) {
-				if (typeof instanceSettings.callbackMaxSelection === "function") { instanceSettings.callbackMaxSelection(); }
+				if (typeof instanceSettings.callbackMaxSelection === "function") { instanceSettings.callbackMaxSelection(); buttonOK.show();}}
 			}
 			
 			// log(selectedPhotoIds);
