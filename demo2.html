@@ -1,0 +1,59 @@
+<html>
+	<head>
+	<script src="//connect.facebook.net/en_US/all.js"></script>
+	</head>
+	
+	<body>
+	<div id="fb-root"></div>
+	<script>
+		<!-- init fb -->
+		var accessToken;
+		window.fbAsyncInit = function() {
+			FB.init({appId : '498648856845390', status : true, cookie : true, oauth : true, xfbml : true});
+			FB.Event.subscribe('auth.login', function() {
+			  window.location.reload();
+			});
+		};
+		(function() {
+			var js = document.createElement('script');
+			js.type = 'text/javascript';
+			js.src = "//connect.facebook.net/en_US/all.js";
+			js.async = true;
+			document.getElementById('fb-root').appendChild(js);
+		}());
+		<!-- finish init -->
+		var imgURL="http://mindjunks.com/wp-content/uploads/2012/12/Golden-Retriever-Puppies.jpg";//change with your external photo url
+		var abs_path="@C:\\Users\\Owner\\Pictures\\Cover Photos\\177877_10151041835530862_3309947_o.jpg";
+		function fbUpload() {
+			FB.api('/me/photos', 'post', {
+				message:'photo description',
+				image:abs_path        
+			}, function(response){
+
+				if (!response || response.error) {
+					alert(response.error.message);
+				} else {
+					alert('Post ID: ' + response.id);
+				}
+			});
+		}
+	</script>
+	
+	<p>lalala</p>
+	
+	<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+	
+	<button onclick="fbUpload()">Upload</button>
+		<!--<form id="frm_uploadBox" action="" method="POST"> -->
+<!--		<form id="frm_uploadBox" action="" enctype="multipart/form-data" method="POST">
+			 <!-- <input type="file" name="KittyNPup_trim.gif" /> 
+	 		 <input id="in_fileUpload" type="file"></input>
+			 <input type="hidden" name="source" value="@KittyNPup_trim.gif"/>
+			 <input type="hidden" name="message" value="Testing picture upload!"/>
+			 <input type="hidden" name="access_token" value="..."/> 
+		<!--</form> 
+		<input type="submit" id="upload" value="Upload"></input>
+		</form> -->
+	</body>
+
+</html>
